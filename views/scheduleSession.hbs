@@ -1,0 +1,54 @@
+<div class = "session-container">
+<h1>CONSULTANT AVAILABILITY (LOS ANGELES TIME)</h1> <br>
+{{#if success}}
+  <div style="text-align: center" class="alert alert-success" role="alert">
+    <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+    {{success}}
+  </div>
+{{/if}}
+{{#if failure}}
+  <div style="text-align: center" class="alert alert-danger" role="alert">
+    <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+    <span class="sr-only">Error:</span>
+    {{failure}}
+  </div>
+{{/if}}
+<div class = "container-fluid">
+<iframe src="https://calendar.google.com/calendar/embed?src={{user.calendarId}}&ctz=America%2FLos_Angeles" style="border: 0" width="800" height="600" frameborder="0" scrolling="no"></iframe>
+</div>
+<br><br>
+<div style="width:70%" class = "scheduling-container">
+<!-- <div class = "col-xs-4 center-block"> -->
+<h3> AVAILABLE CONSULTATION TIMES: </h3>
+<!-- <form method="POST" action="/scheduleSession">
+<div class="center-block">
+  <label>Consultation Date</label>
+  <input id="appt-date" class="form-control center-block" type="date" name="date"
+                  required />
+</div>
+<div class="center-block">
+  <label>Timeslot: U.S East Coast Time </label>
+  <input class="form-control center-block" value="10:00" type="time" id="appt-time" name="timeslot"
+               min="9:00" max="18:00" required />
+</div>
+<div class="center-block">
+  <label>Input</label>
+  <input id="appt-desc" type="text" name="description" class="center-block form-control" placeholder="Optionally include any requests or concerns..."/>
+</div> <br>
+<button class="btn-success">CONFIRM SESSION</button>
+</form> -->
+
+{{#each availability}}
+<div class="schedule-slot">
+  <form method="POST" action="/scheduleSession/{{this.id}}">
+  <h5>{{this.formattedStart}} - {{this.formattedEnd}}</h5>
+  <h6>(Pacific-Standard-Time)</h6>
+  <input type="hidden" value={{this.startDate}} name="startDate"></input>
+  <input type="hidden" value={{this.endDate}} name="endDate"></input>
+  <input type="hidden" value={{this.start}} name="start"></input>
+  <button type="submit" name="consultation" value='{{this.calId}}' class="btn-success">SCHEDULE SESSION</button>
+</form>
+</div>
+{{/each}}
+<!-- </div> -->
+</div>
