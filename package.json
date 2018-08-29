@@ -1,0 +1,22 @@
+{
+  "name": "apiary-test",
+  "version": "1.0.0",
+  "description": "test repo",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/chrislh9000/apiary-test.git"
+  },
+  "keywords": [
+    "test"
+  ],
+  "author": "Chris Hemm",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/chrislh9000/apiary-test/issues"
+  },
+  "homepage": "https://github.com/chrislh9000/apiary-test#readme"
+}
