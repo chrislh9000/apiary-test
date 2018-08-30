@@ -48,6 +48,10 @@ function hashPassword(password) {
   return hash.digest('hex');
 }
 
+//ACCESS FORUM
+router.get('/forum', (req, res) => {res.render('forum')})
+
+
 // Profile stuff
 router.get('/users/myProfile', function(req, res, next) {
   let hasImage= true;
