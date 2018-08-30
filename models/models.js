@@ -316,6 +316,14 @@ const imageSchema = new Schema ({
   }
 })
 
+const postSchema = new Schema ({
+  text : String,
+  user : {
+    type: Schema.Types.ObjectId,
+    ref: 'User'
+  }
+})
+
 
 
 
@@ -329,6 +337,7 @@ const Ambassador = mongoose.model('Ambassador', ambassadorSchema);
 const Consultation = mongoose.model('Consultation', consultationSchema);
 const OauthToken = mongoose.model('Token', oauthTokenSchema);
 const ProfileImage = mongoose.model('Image', imageSchema);
+const Post = mongoose.model('Post', postSchema);
 
 
 
@@ -342,4 +351,5 @@ module.exports = {
   Consultation: Consultation,
   Image : ProfileImage,
   PaypalPayment: PaypalPayment,
+  Post: postSchema,
 }
