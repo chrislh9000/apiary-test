@@ -1,12 +1,12 @@
-var createError = require('http-errors');
-var express = require('express');
-var path = require('path');
-var cookieParser = require('cookie-parser');
-var logger = require('morgan');
-var mongoose = require('mongoose');
-var bodyParser = require('body-parser')
-var passport = require('passport');
-var LocalStrategy = require('passport-local').Strategy
+const createError = require('http-errors');
+const express = require('express');
+const path = require('path');
+const cookieParser = require('cookie-parser');
+const logger = require('morgan');
+const mongoose = require('mongoose');
+const bodyParser = require('body-parser')
+const passport = require('passport');
+const LocalStrategy = require('passport-local').Strategy
 //image upload
 const multer = require('multer');
 const cloudinary = require('cloudinary');
@@ -42,6 +42,7 @@ const googleRouter = require('./routes/google');
 const preloginRouter = require('./routes/prelogin');
 const adminRouter = require('./routes/admin');
 const paymentRouter = require('./routes/payment');
+const networkRouter = require('./routes/network');
 
 var models = require('./models/models');
 const User = models.User;
@@ -125,6 +126,7 @@ app.use('/', googleRouter);
 app.use('/', preloginRouter);
 app.use('/', adminRouter);
 app.use('/', paymentRouter);
+app.use('/', networkRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

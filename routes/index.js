@@ -545,16 +545,7 @@ router.get('/calendar', function(req, res, next) {
 
 ////////////////////////////////////////NEWSFEED/////////////////////////////////////////////////////
 /////////////////////////////////////////////////////////////////////////////////////////////////////////
-router.get('/network/newsfeed', (req, res) => {
-  res.render('./Network/apiary-feed');
-});
 
-router.get('/test/newsfeed', (req, res) => {
-  res.render('./Network/newsfeed', {
-    networkToggled: true,
-    loggedIn: true,
-  });
-})
 
 
 
