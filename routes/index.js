@@ -48,7 +48,7 @@ function hashPassword(password) {
   return hash.digest('hex');
 }
 
-//ACCESS FORUM
+//ACCESS FORUM 
 router.get('/forum', (req, res) => {res.render('forum')})
 
 
